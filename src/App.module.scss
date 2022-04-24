@@ -1,0 +1,30 @@
+.root {
+  .wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    .content {
+      position: absolute;
+      top: 0;
+      bottom: 60px;
+      right: 0;
+      left: 0;
+      background-color: skyblue;
+      overflow: hidden;
+    }
+
+    .message_input {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      height: 60px;
+      bottom: 0px;
+      right: 0;
+      left: 0;
+      background-color: black;
+    }
+  }
+}
