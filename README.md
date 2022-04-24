@@ -24,3 +24,15 @@ cd react-scroll-demo
 yarn
 yarn start
 ```
+
+スマホから PC のネットワークにアクセスしてデザインを見る。
+
+## スクリーンショット
+
+入力欄タップ直後の様子(全部 IOS)。
+
+| Chrome | FireFox | Safari |
+| ------ | ------- | ------ |
+|        |         |        |
+| Opera  | Edge    | Brave  |
+|        |         |        |
