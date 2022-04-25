@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './TextInput.module.scss';
 
-const TextInput = ({ setIsForcused }) => {
+const TextInput = ({ setIsForcused, setCount, count }) => {
   return (
     <div className={styles.root}>
       <input
@@ -16,7 +16,9 @@ const TextInput = ({ setIsForcused }) => {
         }}
         onBlur={() => setIsForcused(false)}
       />
-      <button className={styles.button}>SEND</button>
+      <button className={styles.button} onClick={() => setCount(count + 10)}>
+        SEND
+      </button>
     </div>
   );
 };

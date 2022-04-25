@@ -1,12 +1,28 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './Content.module.scss';
 
-const Content = () => {
+const Content = ({ num }) => {
+  const [cannotScroll, setCannotScroll] = useState(true);
   useEffect(() => {
-    const content_root = document.getElementsByClassName(styles.root)[0];
-    content_root.scrollTop = 1;
+    const content_root =
+      document.getElementsByClassName(styles.wrap)[0] ??
+      document.getElementsByClassName(styles.wrap_no)[0];
+    if (content_root.scrollTop < 1) content_root.scrollTop = 1;
+
+    if (content_root.clientHeight >= content_root.parentElement.clientHeight) {
+      setCannotScroll(false);
+    } else {
+      setCannotScroll(true);
+    }
 
     content_root.addEventListener('scroll', () => {
+      if (
+        content_root.clientHeight >= content_root.parentElement.clientHeight
+      ) {
+        setCannotScroll(false);
+      } else {
+        setCannotScroll(true);
+      }
       if (content_root.scrollTop === 0) {
         content_root.scrollTop = 1;
       } else if (
@@ -16,10 +32,13 @@ const Content = () => {
         content_root.scrollTop = content_root.scrollTop - 1;
       }
     });
-  }, []);
+  }, [num]);
   return (
-    <div className={styles.root}>
-      {[...Array(100)].map((_, i) => (
+    <div className={cannotScroll ? styles.wrap_no : styles.wrap}>
+      <h2 style={{ position: 'fixed', right: 0 }}>
+        {cannotScroll ? 'cannot scroll' : 'can scroll'}
+      </h2>
+      {[...Array(num)].map((_, i) => (
         <div key={i} className={styles.message}>
           test message {i}
         </div>

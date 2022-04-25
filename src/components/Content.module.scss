@@ -1,7 +1,14 @@
-.root {
-  overflow-y: auto;
+.wrap {
   height: 100%;
-
+  overflow-y: auto;
+  .message {
+    color: black;
+    font-size: 8pt;
+    padding-bottom: 2px;
+  }
+}
+.wrap_no {
+  touch-action: false;
   .message {
     color: black;
     font-size: 8pt;

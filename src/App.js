@@ -7,6 +7,7 @@ function App() {
   const [isFocused, setIsForcused] = useState(false);
   const [userAgent, setUserAgent] = useState('pc');
   const [browser, setBrowser] = useState('safari');
+  const [count, setCount] = useState(1);
   const userAgentIs = (agent) => {
     return userAgent === agent;
   };
@@ -57,10 +58,14 @@ function App() {
         }
       >
         <div className={styles.content}>
-          <Content />
+          <Content num={count} />
         </div>
         <div className={styles.message_input}>
-          <TextInput setIsForcused={setIsForcused} />
+          <TextInput
+            setIsForcused={setIsForcused}
+            setCount={setCount}
+            count={count}
+          />
         </div>
       </div>
     </div>
