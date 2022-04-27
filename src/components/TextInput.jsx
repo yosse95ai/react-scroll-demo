@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './TextInput.module.scss';
 
 const TextInput = ({ setIsForcused, setCount, count }) => {
+  useEffect(() => {}, []);
   return (
     <div className={styles.root}>
       <input
@@ -14,9 +15,14 @@ const TextInput = ({ setIsForcused, setCount, count }) => {
             window.scrollTo(0, 0);
           }, 200);
         }}
-        onBlur={() => setIsForcused(false)}
       />
-      <button className={styles.button} onClick={() => setCount(count + 10)}>
+      <button
+        className={styles.button}
+        onClick={() => {
+          setCount(count + 10);
+          setIsForcused(false);
+        }}
+      >
         SEND
       </button>
     </div>

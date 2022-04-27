@@ -16,6 +16,11 @@ function App() {
   };
 
   useEffect(() => {
+    document
+      .getElementsByClassName(styles.content)[0]
+      .addEventListener('click', () => {
+        setIsForcused(false);
+      });
     const ua = window.navigator.userAgent.toLowerCase();
     // 使用しているブラウザの判定
     // ブラウザによって、バーチャルキーボードの挙動が若干異なる

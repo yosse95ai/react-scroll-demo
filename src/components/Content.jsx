@@ -8,6 +8,7 @@ const Content = ({ num }) => {
       document.getElementsByClassName(styles.wrap)[0] ??
       document.getElementsByClassName(styles.wrap_no)[0];
     if (content_root.scrollTop < 1) content_root.scrollTop = 1;
+    content_root.scrollTop += 1000;
 
     if (content_root.clientHeight >= content_root.parentElement.clientHeight) {
       setCannotScroll(false);
