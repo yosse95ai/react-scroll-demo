@@ -40,7 +40,11 @@ const Content = ({ num }) => {
         {cannotScroll ? 'cannot scroll' : 'can scroll'}
       </h2>
       {[...Array(num)].map((_, i) => (
-        <div key={i} className={styles.message}>
+        <div
+          key={i}
+          className={styles.message}
+          style={{ color: `#${Math.random().toString(10).slice(-6)}` }}
+        >
           test message {i}
         </div>
       ))}
